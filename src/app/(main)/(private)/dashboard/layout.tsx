@@ -1,5 +1,6 @@
-import React from "react";
-import AuthGuard from "./guard/AuthGuard";
+import React from 'react';
+import AuthGuard from './guard/AuthGuard';
+import DashboardAsideNavbar from '@/ui/organisms/common/NavBarDashboardAside';
 
 export default function PrivateLayout({
   children,
@@ -7,8 +8,11 @@ export default function PrivateLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      <AuthGuard>{children}</AuthGuard>
-    </div>
+    <AuthGuard>
+      <div className='flex'>
+        <DashboardAsideNavbar />
+        {children}
+      </div>
+    </AuthGuard>
   );
 }

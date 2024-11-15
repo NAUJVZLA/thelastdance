@@ -1,15 +1,13 @@
 "use client";
-import LinearIndeterminate from "@/components/atoms/loading";
+import LinearIndeterminate from "@/ui/atoms/loading";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
-
 
 export default function AuthGuard({ children }: { children: React.ReactNode }) {
   const { data, status } = useSession();
   const router = useRouter();
   console.log(data, status);
-
   useEffect(() => {
     if (status === "unauthenticated") {
       router.push("/login");
@@ -17,7 +15,7 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
   }, [status, router]);
 
   if (status === "authenticated") {
-    return <> {children}</>;
+    return <>{children}</>;
   }
   if (status === "loading") {
     return <LinearIndeterminate />;

@@ -1,10 +1,5 @@
-"use client";
-import Link from "next/link";
-import LoginPage from "./(public)/(auth)/login/page";
+import { redirect } from 'next/navigation';
 
-
-export default function Component() {
-  return (
-    <LoginPage/>
-  );
+export default function Home() {
+  redirect('/login');
 }

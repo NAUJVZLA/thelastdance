@@ -1,7 +1,7 @@
 import { ILoginRequest, ILoginResponse } from "../dto";
 
 export interface PAuth {
-  /**
+    /**
    * Fetches all certificates with pagination and optional search filters.
    * This method leverages a dynamic query parameter generator to facilitate complex search capabilities.
    *
@@ -10,5 +10,5 @@ export interface PAuth {
    * @returns {Promise<ILoginResponse>} - A promise that resolves with the response containing the list of certificates and pagination details.
    * @throws {Error} - Throws an error if the API call fails, handled by `handleApiErrors`.
    */
-  login(req: ILoginRequest): Promise<ILoginResponse>;
+    login(req: ILoginRequest): Promise<ILoginResponse>
 }

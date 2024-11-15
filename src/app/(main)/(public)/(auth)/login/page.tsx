@@ -1,6 +1,4 @@
-
-
-import { LoginTemplate } from '@/components/template'
+import { LoginTemplate } from '@/ui/template'
 import React from 'react'
 
 export default function LoginPage() {
