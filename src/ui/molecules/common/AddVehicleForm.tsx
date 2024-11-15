@@ -3,8 +3,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FormField } from "@/ui/molecules/common/FormField";
-import Avatar from "@mui/material/Avatar";
-
+import { Camera } from "lucide-react";
 import "react-toastify/dist/ReactToastify.css";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -101,7 +100,6 @@ export default function AddVehicleForm({
   return (
     <form
       onSubmit={handleSubmit(onSubmit)} // Manejador de envío del formulario
-      className="w-full max-w-lg mx-auto p-8 space-y-6 bg-white rounded-lg shadow-md"
     >
       <h2 className="text-2xl font-semibold text-center mb-4">
         Agregar nuevo vehículo
@@ -109,11 +107,17 @@ export default function AddVehicleForm({
 
       {/* Vista previa del avatar y botones de archivo */}
       <div className="flex flex-col items-center mb-4">
-        <Avatar
-          src={preview || "/default-avatar.jpg"} // Muestra la vista previa de la imagen
-          alt="Vehicle Preview"
-          sx={{ width: 80, height: 80 }}
-        />
+        <div className="relative w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
+          {preview ? (
+            <img
+              src={preview}
+              alt="Preview"
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <Camera />
+          )}
+        </div>
         <div className="flex gap-4 mt-4">
           <Button variant="car" className="w-20 h-30 text-[#ffff] ">
             Cargar
