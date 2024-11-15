@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { ILoginRequest } from "@/app/core/application/dto";
 import { FormField } from "@/components/molecules/common/FormField";
 import { Button } from "@/components/atoms/Button";
-import Eyes from "@/components/atoms/svg/eye";
+import { LockB } from "@/components/atoms/svg/lock";
 
 const loginSchema = yup.object().shape({
   email: yup
@@ -58,10 +58,9 @@ export const LoginForm = () => {
       className="w-full max-w-sm mx-auto p-4 space-y-4"
       onSubmit={handleSubmit(handleLogin)}
     >
-      <h2 className="text-xl font-semibold color-[#2F2B3D] text-center">
+      <h4 className="text-sm font-semibold color-[#2F2B3D] text-center">
         Inicia sesion en tu cuenta y gestiona tu flota de vehiculos
-      </h2>
-
+      </h4>
       <FormField<ILoginRequest>
         control={control}
         type="email"
@@ -70,23 +69,23 @@ export const LoginForm = () => {
         error={errors.email}
         placeholder="Ingresa tu correo"
       />
-
       <FormField<ILoginRequest>
         control={control}
         type="password"
         label="Contraseña"
         email="password"
         error={errors.password}
-       
       />
-      <Eyes />
-      <Button
-        className="items-center justify-center"
-        variant="car"
-        type="submit"
-      >
-        Iniciar Sesión
-      </Button>
+      <div className="flex justify-center items-center space-x-4">
+        <Button
+          className="text-[#FFFFFF]"
+          variant="car"
+          size="default"
+          type="submit"
+        >
+          <LockB width={240} height={240} fill="#fff" /> Iniciar Sesión
+        </Button>
+      </div>
     </form>
   );
 };

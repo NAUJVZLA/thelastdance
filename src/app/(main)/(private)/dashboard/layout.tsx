@@ -8,9 +8,7 @@ export default function PrivateLayout({
 }) {
   return (
     <div>
-      {/* <AuthGuard> */}
-      {children}
-      {/* </AuthGuard> */}
+      <AuthGuard>{children}</AuthGuard>
     </div>
   );
 }

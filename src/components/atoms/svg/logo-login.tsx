@@ -6,7 +6,7 @@ interface SvgIconProps {
   fill?: string;
 }
 
-const LinearIndeterminateIcon: React.FC<SvgIconProps> = ({
+const LogoP: React.FC<SvgIconProps> = ({
   width = 50,
   height = 50,
   fill = "#7692FF",
@@ -27,4 +27,4 @@ const LinearIndeterminateIcon: React.FC<SvgIconProps> = ({
   );
 };
 
-export default LinearIndeterminateIcon;
+export default LogoP;
