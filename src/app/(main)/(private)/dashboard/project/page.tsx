@@ -3,6 +3,7 @@
 import VehiclesTable from "@/ui/organisms/table-vehicles/TableVehicles";
 import FormFilter from "@/ui/organisms/form-filter/FormFilter";
 import { useVehicles } from "@/hooks/useVehicles";
+import LinearIndeterminate from "@/ui/atoms/loading";
 
 export default function VehiclesManagementPage() {
   const {
@@ -26,7 +27,7 @@ export default function VehiclesManagementPage() {
 
       <FormFilter onSubmit={handleFilterSubmit} />
 
-      {loading && <p>Loading vehicles...</p>}
+      {loading && <LinearIndeterminate/>}
       {error && <p className="text-red-500">{error}</p>}
 
       <VehiclesTable
